@@ -1,12 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import './App.css'
+
+//components
+import Content from './content/Content'
 
 function App() {
+
+  const [user, setUser] = useState(null)
+
   return (
-    <div className="App">
-      SPACE FUN COMING SOON
-    </div>
+    <Router>
+      <Content user={user} />
+    </Router>
   );
 }
 
