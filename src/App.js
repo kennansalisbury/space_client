@@ -7,7 +7,7 @@ import Content from './content/Content'
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState('user')
 
   return (
     <Router>

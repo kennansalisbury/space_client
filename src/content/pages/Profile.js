@@ -10,7 +10,12 @@ const Profile = props => {
     }
 
     return (
-        <div>Welcome!</div>
+        <div className="Profile">
+            
+            <h1>Welcome {props.user}!</h1>
+            
+        </div>
+
     )
 }
 

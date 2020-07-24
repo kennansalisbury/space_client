@@ -5,7 +5,7 @@ const Footer = props => {
         <div className="footer">
             <p>
                 Kennan Salisbury <a href="http://www.linkedin.com/in/kennansalisbury" target="_blank" rel='noreferrer noopener'>
-                    <i className="fab fa-linkedin-in"></i>
+                    <i className="fab fa-linkedin"></i>
                  </a>
             </p>
             
