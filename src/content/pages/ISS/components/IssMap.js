@@ -15,8 +15,6 @@ const IssMap = props => {
       console.log(props.issPosition)
 
     return (
-        
-
             <LoadScript
                 googleMapsApiKey = {process.env.REACT_APP_GOOGLE_MAP_KEY}
             >
