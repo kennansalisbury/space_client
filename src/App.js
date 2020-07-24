@@ -8,6 +8,7 @@ import Content from './content/Content'
 function App() {
 
   const [user, setUser] = useState('user')
+  // const [user, setUser] = useState(null)
 
   return (
     <Router>
