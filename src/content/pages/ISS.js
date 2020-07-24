@@ -1,43 +1,47 @@
 import React, { useState, useEffect } from 'react'
 
 import { Redirect } from 'react-router-dom'
-import { catchError } from '../../helpers/Helpers'
+import { fetchData } from '../../helpers/Helpers'
 
 const ISS = props => {
 
-    const [lat, setLat] = useState('')
-    const [long, setLong] = useState('')
-    const [timestamp, setTimestamp] = useState(0)
+    const [issData, setIssData] = useState({})
     const [errorMessage, setErrorMessage] = useState('')
 
-    // ***** TO DO: if props.user, fetch data from iss api on render (useEffect) and generate map
+    //on render, fetch data from the api 
+        //only if a user is logged in (so that we don't fetch data unecessarily if an unauthenticated user tries to access this page)
     useState(() => {
         if(props.user) {
-            fetch('http://api.open-notify.org/iss-now.json')
-            .then(response => 
-                response.json()
-                .then(data => {
-                   setLat(data.iss_position.latitude)
-                   setLong(data.iss_position.longitude)
-                   setTimestamp(data.timestamp)
-                })
-                .catch(err => catchError(err, setErrorMessage))
-            )
-            .catch(err => catchError(err, setErrorMessage))
+            fetchData(process.env.REACT_APP_ISS_URL, setIssData, setErrorMessage)
         }
     },[props.user])
-
-    console.log({lat, long, timestamp})
 
     //if no user is logged in, redirect to login
     if(!props.user) {
         return <Redirect to="/login" />
     }
 
+    //if there is no data loaded yet, don't display anything
+    if(!issData.timestamp) {
+        return <div></div>
+    }
+
+    //once there is data loaded and saved in state, parse data and assign to variables for use in return
+    let timestamp, lat, long
+    if(issData.timestamp) {
+        timestamp = issData.timestamp
+        lat = issData.iss_position.latitude
+        long = issData.iss_position.longitude
+    }
+
     return (
         <div className="iss">
             
             <h1>ISS Location</h1>
+
+            {/* ***** TO DO: generate location on map with lat/long */}
+
+
             {/* need to include as of time and refresh button; stretch: frequent polling */}
 
 
