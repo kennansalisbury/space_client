@@ -30,11 +30,9 @@ const ISS = props => {
     }
 
     //once there is data loaded and saved in state, parse data and assign to variables for use in return
-    let timestamp, lat, long
+    let timestamp
     if(issData.timestamp) {
         timestamp = issData.timestamp
-        lat = issData.iss_position.latitude
-        long = issData.iss_position.longitude
     }
 
     return (
@@ -43,7 +41,7 @@ const ISS = props => {
             <h1>ISS Location</h1>
 
             {/* ***** TO DO: generate location on map with lat/long */}
-            <IssMap />
+            <IssMap issPosition={issData.iss_position} />
 
             {/* need to include as of time and refresh button; stretch: frequent polling */}
 

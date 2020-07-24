@@ -6,17 +6,13 @@ const mapStyles = {
     height: '50%'
 }
 
-const center = {
-    lat: -3.745,
-    lng: -38.523
-  };
-
 const IssMap = props => {
-
-    // const { isLoaded, loadError } = useLoadScript({
-    //     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_KEY
-    // })
-
+    
+    const center = {
+        lat: Number(props.issPosition.latitude),
+        lng: Number(props.issPosition.longitude)
+      };
+      console.log(props.issPosition)
 
     return (
         
@@ -27,12 +23,12 @@ const IssMap = props => {
                 <GoogleMap
                     mapContainerStyle={mapStyles}
                     center={center}
-                    zoom={5}
+                    zoom={2}
                     mapTypeId='satellite'
                 >
                     <Circle
                         center={center}
-                        radius={100000}
+                        radius={500000}
                     >
 
                     </Circle>
