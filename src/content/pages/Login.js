@@ -6,7 +6,7 @@ const Login = props => {
 
     //if a user is already logged in, redirect to profile
     if(props.user) {
-        return <Redirect to="/profile" />
+        return <Redirect to="/" />
     }
 
     //Twitter Auth Function
