@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 import { Redirect } from 'react-router-dom'
-import { fetchData } from '../../helpers/Helpers'
+import { fetchData } from '../../../helpers/Helpers'
+
+import issMap from './ISS'
+import IssMap from './components/IssMap'
 
 const ISS = props => {
 
@@ -40,7 +43,7 @@ const ISS = props => {
             <h1>ISS Location</h1>
 
             {/* ***** TO DO: generate location on map with lat/long */}
-
+            <IssMap />
 
             {/* need to include as of time and refresh button; stretch: frequent polling */}
 
