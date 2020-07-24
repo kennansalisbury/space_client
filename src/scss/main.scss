@@ -4,7 +4,7 @@
 @import 'profile';
 @import 'astronauts';
 @import 'iss';
-
+@import 'mixins';
 
 .content {
     width: 100vw;
@@ -12,4 +12,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.left_text {
+    text-align: left;
+}
+
+.right_text {
+    text-align: right;
 }

@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { catchError } from '../../../helpers/Helpers'
 
+//components
+import {Table} from './components'
+
 const Astronauts = props => {
 
     const [errorMessage, setErrorMessage] = useState('')
@@ -41,6 +44,7 @@ const Astronauts = props => {
             {errorMessage}
 
             {/***** TO DO: pass data into table component here ******/}
+            <div className="border"><Table astronauts={astronautData} /></div>
 
         </div>
     )
