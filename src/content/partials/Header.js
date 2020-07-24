@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = props => {
     return (
-        <div>Header</div>
+        <div className="header"><p>Space Flex</p></div>
     )
 }
 

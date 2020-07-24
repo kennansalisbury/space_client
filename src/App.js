@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import './App.css'
+import './scss/main.scss'
 
 //components
 import Content from './content/Content'

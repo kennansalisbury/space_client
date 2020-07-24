@@ -10,7 +10,7 @@ const Content = props => {
 
     return (
         <div className="content">
-            <Header user={props.user} />
+            {props.user ? <Header user={props.user} /> : '' }
             <Route path="/login" render={() => <Login user={props.user} />}/>
             <Route path="/profile" render={() => <Profile user={props.user} />}/>
             <Route path="/astronauts" render={() => <Astronauts user={props.user} />}/>
