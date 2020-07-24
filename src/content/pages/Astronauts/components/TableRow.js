@@ -8,7 +8,7 @@ const TableRow = props => {
         <div className="table__row">
             <p className="left_text">{astronaut.name}</p>
             <p>{astronaut.craft}</p>
-            <p><i class="fab fa-twitter-square"></i></p>
+            <p><i className="fab fa-twitter-square"></i></p>
         </div>
     )
 }

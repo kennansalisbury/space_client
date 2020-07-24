@@ -19,7 +19,6 @@ const Astronauts = props => {
             .then(response => 
                 response.json()
                 .then(data => {
-                    console.log(data)
                     setAstronautData(data.people)
                     setNumAstronauts(data.number)
                 })
