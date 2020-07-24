@@ -26,17 +26,21 @@ const Menu = props => {
         </div>
     )
 
+    let drawerCloseBtnClass = open ? 'drawer-close-btn' : 'display-none'
+
+
 
     return (
-        <div>
+        <div className="menu">
             <Button onClick={(e) => toggleDrawer(true)}>Menu</Button>
             <React.Fragment>
                 <GlobalCss />
-                <Drawer anchor={'left'} open={open} onClose={() => toggleDrawer(false)} className="menu-drawer">
-                    {list}
+                <Drawer anchor={'left'} open={open} onClick={() => toggleDrawer(false)}>
+                    {/* {list} */}
                 </Drawer>
-                <Drawer anchor={'right'} open={open} onClose={() => toggleDrawer(false)}>
+                <Drawer anchor={'right'} open={open} onClick={() => toggleDrawer(false)} >
                     {list}
+                    <button className={drawerCloseBtnClass}>x</button>
                 </Drawer>
             </React.Fragment>
         </div>
@@ -48,6 +52,9 @@ const GlobalCss = withStyles({
         '.MuiBackdrop-root': {
             'background-color': 'transparent',
         },
+        '.MuiDrawer-paper': {
+            'overflow-y': 'visible'
+        }
     },
 })(() => null)
 

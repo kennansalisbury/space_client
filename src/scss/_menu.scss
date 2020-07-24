@@ -1,8 +1,24 @@
+.menu {
+    position: relative;
+}
+
 .menu-list {
     width: 49.9vw;
+    overflow: visible;
 }
 
 .menu-drawer {
-    // background: black;
+    background: black;
     color: white;
+}
+
+.drawer-close-btn {
+    background-color: black;
+    color: white;
+    height: 8vh;
+    width: 8vh;
+    position: absolute;
+    left: -5%;
+    bottom: 50%;
+    border-radius: 50%;
 }
