@@ -35,6 +35,7 @@ function App() {
 
   // Helper function to decode existing tokens
   const decodeToken = existingToken => {
+  
     let token = existingToken || localStorage.getItem('userToken')
 
     // Decode token
@@ -42,7 +43,7 @@ function App() {
       let decoded = jwtDecode(token)
 
       // If the token is not decodable or is expired, NO USER
-      if(!decoded || Date.now() > decoded.exp) {
+      if(!decoded || Date.now() > decoded.exp * 1000) {
         setUser(null)
       } else {
         // if token is good, set user to the decoded data from the token

@@ -11,17 +11,16 @@ const Login = props => {
 
     // Twitter Auth Function
     const getTwitterAuthUrl = () => {
+
         //fetch call to backend auth route
-        // fetch(process.env.REACT_APP_TWITTER_AUTH)
-        Axios.get(process.env.REACT_APP_TWITTER_AUTH)
-        .then(response => {
-            console.log(response.data.url)
-            // response.json()
-            // // .then(data => 
-            setTwitterUrl(response.data.url)
-            // .then(data => console.log(data))
-            // .catch(err => catchError(err, setErrorMessage))
-        })
+        fetch(process.env.REACT_APP_TWITTER_AUTH)
+        .then(response => response.json()
+            .then(data =>  {
+            
+            //sends back twitter authentication url to which the user should be directed to login/authorize te app
+            setTwitterUrl(data.url)
+
+        }))
         .catch(err => catchError(err, setErrorMessage))
     }
 
@@ -29,22 +28,13 @@ const Login = props => {
         if(!props.user) {
             getTwitterAuthUrl()
         }
-        // fetch('http://localhost:3000/auth/twitter/success')
-        // .then(response => {
-        //     console.log('🌈', response)
-        // }) 
-        // .catch(err => catchError(err, setErrorMessage))
     }, [])
 
     //if a user is already logged in, redirect to profile
     if(props.user) {
+        console.log('there is a user', props.user)
         return <Redirect to="/" />
     }
-
-    // const signInWithTwitter = () => {
-    //     window.open(twitterUrl)
-    // }
-    console.log('🍪🍪🍪', document.cookie)
 
     return (
         <div className="login">
@@ -56,9 +46,8 @@ const Login = props => {
                 </p>
             </div>
 
-            
+            {/* sign in with twitter button appears once twitter url is received from backend */}
             {twitterUrl ? <a href={twitterUrl} rel="noopener noreferrer"><button>Sign In With Twitter</button></a> : ''}
-            {/* {twitterUrl ? <button onClick={() => signInWithTwitter()}>Sign In With Twitter</button> : ''} */}
 
             {/* any errors will display here */}
             {errorMessage}
