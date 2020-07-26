@@ -16,16 +16,21 @@ const Menu = props => {
 
     const [open, setOpen] = useState(false)
 
+    //toggles whether the menu is open or closed
     const toggleDrawer = (open) => {
         setOpen(open)
     }
 
+    //logs user out when clicking the logout button
     const logoutUser = () => {
         localStorage.removeItem('userToken');
         props.updateUser(null);
     }
 
-    let drawerCloseBtnClass = open ? 'drawer-close-btn' : 'display-none'
+    //sets class for the "close" btn for the menu, so that it only displays when the menu is open
+    let drawerCloseBtnClass = open ? 'menu__close-btn' : 'display-none'
+
+    //route content from import for including in the menu (passed into List component)
     let routes = [profileRoute, astronautsRoute, issRoute]
 
     return (
@@ -34,10 +39,12 @@ const Menu = props => {
             <React.Fragment>
                 <GlobalCss />
                 <Drawer anchor={'left'} open={open} onClick={() => toggleDrawer(false)} ModalProps={{hideBackdrop: true, disablePortal: true }}>
-                    <img id="menu-photo" src={Earth} alt="earth"></img>
+                    <div className="menu__drawer menu__drawer__left">
+                        <img id="menu-photo" src={Earth} alt="earth"></img>
+                    </div>
                 </Drawer>
                 <Drawer anchor={'right'} open={open} onClick={() => toggleDrawer(false)} ModalProps={{hideBackdrop: true, disablePortal: true, BackdropProps: {open: false} }}>
-                    <div>
+                    <div className="menu__drawer menu__drawer__right">
                         <List routes={routes} logoutUser={logoutUser}/>
                         <button className={drawerCloseBtnClass}>x</button>
                         <span className="photo-credit">Photo by <a href="https://unsplash.com/@nypl?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">The New York Public Library</a> on <a href="https://unsplash.com/s/photos/earth?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
@@ -48,23 +55,28 @@ const Menu = props => {
     )
 }
 
+//list component
 const List = (props) => {
-    let menuList = props.routes.map(route =><Link to={route.route}>{route.name}</Link>)
+    let menuList = props.routes.map(route =><Link key={route.name} to={route.route}>{route.name}</Link>)
 
     return (
-        <div className="menu-list">
+        <div className="menu__list">
             {menuList}
-            <button onClick={() => props.logoutUser()}>Logout</button>
+            <p onClick={() => props.logoutUser()}>Logout</p>
         </div>
     )
 }
 
+//overrides the override property - this allows for the close menu button to appear over both drawers
 const GlobalCss = withStyles({
     '@global': {
         '.MuiDrawer-paper': {
             'overflow-y': 'visible'
+        },
+        '.MuiPaper-root': {
+            'background-color': 'rgb(46, 44, 44)'
         }
-    },
+    }
 })(() => null)
 
 export default Menu

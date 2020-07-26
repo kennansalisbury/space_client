@@ -5,3 +5,15 @@
     border-bottom: 1px solid gray;
     text-align: center;
 }
+
+@mixin black_bg_white_txt {
+    background: black;
+    color: white;
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
