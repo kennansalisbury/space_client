@@ -17,10 +17,9 @@ const Menu = props => {
     let drawerCloseBtnClass = open ? 'drawer-close-btn' : 'display-none'
 
 
-
     return (
         <div className="menu">
-            <Button onClick={(e) => toggleDrawer(true)}>Menu</Button>
+            <Button onClick={(e) => toggleDrawer(true)}>MENU</Button>
             <React.Fragment>
                 <GlobalCss />
                 <Drawer 
