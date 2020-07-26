@@ -1,8 +1,5 @@
 .iss {
     width: 100%;
-    height: 80%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 80vh;
+    @include flex(column, flex-start, center);
 }

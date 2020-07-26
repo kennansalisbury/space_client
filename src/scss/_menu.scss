@@ -13,11 +13,12 @@
         color: white;
         height: 100%;
         &__left {
-            background-image: linear-gradient(to right,rgb(19, 18, 18), rgb(46, 44, 44));
-            width: 80%;
+            background-image: linear-gradient(to right,rgb(19, 18, 18), $background-gray);
+            width: 50vw;
         }
         &__right {
-            background-image: linear-gradient(to left, rgb(19, 18, 18), rgb(46, 44, 44))
+            background-image: linear-gradient(to left, rgb(19, 18, 18), $background-gray);
+            width: 50vw;
         }
         & a, p {
             color: white;

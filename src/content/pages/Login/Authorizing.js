@@ -48,7 +48,9 @@ const Authorizing = props => {
 
 
     return (
-        <div>Please wait just a minute while we confirm your Twitter account</div>
+        <div className="authorizing">
+            <div className="border">Please wait just a minute while we confirm your Twitter account</div>
+        </div>
     )
 }
 

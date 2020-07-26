@@ -9,14 +9,14 @@ export const authorizingRoute = {
 }
 
 export const profileRoute = {
-    name: 'Home',
+    name: 'home',
     route: '/'
 }
 export const astronautsRoute = {
-    name: 'Astronauts',
+    name: 'astronauts',
     route: '/astronauts'
 }
 export const issRoute = {
-    name: 'ISS Location',
+    name: 'iss location',
     route: '/iss'
 }

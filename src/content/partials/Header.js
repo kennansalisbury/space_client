@@ -9,7 +9,7 @@ const Header = props => {
         <div className="header">
             {props.user ? <Menu user={props.user} updateUser={props.updateUser}  /> : ''}
             <div className="brand">
-                <p>Space Flex</p>
+                <p className="brand-small">space flex</p>
             </div>
         </div>
     )

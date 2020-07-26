@@ -6,31 +6,12 @@
 @import 'iss';
 @import 'menu';
 @import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,700;0,800;1,200;1,300;1,400;1,600&family=Open+Sans&display=swap');
 
 .content {
     width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: black;
+    min-height: 110vh;
+    @include flex(column, flex-start, center);
+    background: $background-space;
     color: white;
-}
-
-.left_text {
-    text-align: left;
-}
-
-.right_text {
-    text-align: right;
-}
-
-.display-none {
-    display: none;
-}
-
-.photo-credit {
-    position: absolute;
-    bottom: 0%;
-    font-size: .2em;
 }

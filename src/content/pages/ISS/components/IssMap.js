@@ -11,8 +11,7 @@ const IssMap = props => {
     const center = {
         lat: Number(props.issPosition.latitude),
         lng: Number(props.issPosition.longitude)
-      };
-      console.log(props.issPosition)
+      }
 
     return (
             <LoadScript

@@ -5,17 +5,18 @@ const TableRow = props => {
 
     let astronaut = props.astronaut
     const [twitter, setTwitter] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
 
     useEffect(() => {
-        console.log('props.astronaut', props.astronaut)
+
         if(props.astronaut) {
-            //post search to backend to query api
+            //post search to backend to query api for astronaut's twitter info
+            //sets info in "twitter" state
             let token = localStorage.getItem('userToken')
             let postData = {
                 q: props.astronaut.name
             }
 
-            console.log('DATA', postData, JSON.stringify(postData))
             fetch('http://localhost:3000/twitter/user', {
                 method: 'POST',
                 body: JSON.stringify(postData),
@@ -26,17 +27,16 @@ const TableRow = props => {
             })
             .then(response => response.json()
                 .then(data => {
-                    console.log('DATA', data)
                     setTwitter(data)
                 })
             )
-            .catch(err => console.log(err))
+            .catch(err => catchError(err, setErrorMessage))
         }
         
     }, [props.astronaut])
 
     return (
-        <div className="table__row">
+        <div className="table__row body-main">
             <p className="left_text">{astronaut.name}</p>
             <p>{astronaut.craft}</p>
             {twitter ? <a href={`http://twitter.com/${twitter.screen_name}`} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter-square"></i></a> : '' }

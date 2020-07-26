@@ -9,9 +9,9 @@ const Table = props => {
 
     return (
         <div className="table">
-            <div className="table__headers">
-                <p className="left_text">Name</p>
-                <p>Currently On</p>
+            <div className="table__headers body-bold">
+                <p className="left_text">name</p>
+                <p>ship</p>
                 <p></p>
             </div>
             <div>

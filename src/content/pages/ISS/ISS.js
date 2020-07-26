@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { fetchData } from '../../../helpers/Helpers'
 
 import IssMap from './components/IssMap'
@@ -18,32 +18,27 @@ const ISS = props => {
         }
     },[props.user])
 
-    //if no user is logged in, redirect to login
-    if(!props.user) {
-        return <Redirect to="/login" />
-    }
-
     //if there is no data loaded yet, don't display anything
     if(!issData.timestamp) {
         return <div></div>
     }
 
-    //once there is data loaded and saved in state, parse data and assign to variables for use in return
-    let timestamp
-    if(issData.timestamp) {
-        timestamp = issData.timestamp
+    //if no user is logged in, redirect to login
+    if(!props.user) {
+        return <Redirect to="/login" />
     }
 
     return (
         <div className="iss">
             
-            <h1>ISS Location</h1>
+            <h1 className="heading-main">iss location</h1>
 
-            {/* ***** TO DO: generate location on map with lat/long */}
             <IssMap issPosition={issData.iss_position} />
 
-            {/* need to include as of time and refresh button; stretch: frequent polling */}
+            {/* stretch: include as of time and refresh button*/}
+            <p className="body-main">{errorMessage}</p>
 
+            <Link to="/" className="body-main">&larr; Back</Link>
 
         </div>
     )

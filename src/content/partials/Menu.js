@@ -57,12 +57,12 @@ const Menu = props => {
 
 //list component
 const List = (props) => {
-    let menuList = props.routes.map(route =><Link key={route.name} to={route.route}>{route.name}</Link>)
+    let menuList = props.routes.map(route =><Link className="menu-header" key={route.name} to={route.route}>{route.name}</Link>)
 
     return (
         <div className="menu__list">
             {menuList}
-            <p onClick={() => props.logoutUser()}>Logout</p>
+            <p className="menu-header" onClick={() => props.logoutUser()}>logout</p>
         </div>
     )
 }
