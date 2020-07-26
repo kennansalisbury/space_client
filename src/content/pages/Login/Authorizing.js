@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useLocation, Redirect } from 'react-router-dom'
-import { catchError } from '../../helpers/Helpers'
+import { catchError } from '../../../helpers/Helpers'
 
 const queryString = require('querystring')
 

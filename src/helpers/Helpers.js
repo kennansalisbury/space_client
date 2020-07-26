@@ -11,7 +11,6 @@ const fetchData = (url, setDataFunction, setMessageFunction) => {
     .then(response => 
         response.json()
         .then(data => {
-            console.log(data)
             setDataFunction(data)
         })
         .catch(err => catchError(err, setMessageFunction))

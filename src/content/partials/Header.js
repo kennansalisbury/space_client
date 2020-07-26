@@ -7,7 +7,7 @@ const Header = props => {
     return (
         
         <div className="header">
-            {props.user ? <Menu  /> : ''}
+            {props.user ? <Menu user={props.user} updateUser={props.updateUser}  /> : ''}
             <div className="brand">
                 <p>Space Flex</p>
             </div>

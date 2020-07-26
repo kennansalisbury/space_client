@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import Axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import { catchError } from '../../helpers/Helpers'
+import { catchError } from '../../../helpers/Helpers'
 
 
 const Login = props => {

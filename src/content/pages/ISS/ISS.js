@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import { fetchData } from '../../../helpers/Helpers'
 
-import issMap from './ISS'
 import IssMap from './components/IssMap'
 
 const ISS = props => {
@@ -13,7 +12,7 @@ const ISS = props => {
 
     //on render, fetch data from the api 
         //only if a user is logged in (so that we don't fetch data unecessarily if an unauthenticated user tries to access this page)
-    useState(() => {
+    useEffect(() => {
         if(props.user) {
             fetchData(process.env.REACT_APP_ISS_URL, setIssData, setErrorMessage)
         }
