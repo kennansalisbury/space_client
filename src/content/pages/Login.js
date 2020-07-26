@@ -26,7 +26,9 @@ const Login = props => {
     }
 
     useEffect(() => {
-        getTwitterAuthUrl()
+        if(!props.user) {
+            getTwitterAuthUrl()
+        }
         // fetch('http://localhost:3000/auth/twitter/success')
         // .then(response => {
         //     console.log('🌈', response)

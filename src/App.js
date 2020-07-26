@@ -6,6 +6,7 @@ import jwtDecode from 'jwt-decode'
 
 //components
 import Content from './content/Content'
+import { Data } from '@react-google-maps/api'
 
 function App() {
 
@@ -41,7 +42,7 @@ function App() {
       let decoded = jwtDecode(token)
 
       // If the token is not decodable or is expired, NO USER
-      if(!decoded || Date.now > decoded.exp * 1000) {
+      if(!decoded || Date.now() > decoded.exp) {
         setUser(null)
       } else {
         // if token is good, set user to the decoded data from the token

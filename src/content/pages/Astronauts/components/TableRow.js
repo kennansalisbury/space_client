@@ -6,17 +6,6 @@ const TableRow = props => {
     let astronaut = props.astronaut
     const [twitter, setTwitter] = useState('')
 
-    useEffect(() => {
-        //post search to backend to query api
-        let token = localStorage.getItem('userToken')
-        fetch('http://localhost:3000/twitter/user', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-        .then(response => console.log(response))
-        .catch(err => console.log(err))
-    }, [])
 
     return (
         <div className="table__row">
