@@ -5,9 +5,7 @@
     height: 100vh;
     @include flex(row, center, center);
     text-align: center;
-    // background-image: url(../assets/moon-bg.jpg);
-    // background-size: cover;
-    // background-repeat: no-repeat; 
+    
     &__twitter {
         width: 20%;
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 //components
-import { TableRow } from '.'
+import TableRow from './TableRow'
 
 const Table = props => {
 

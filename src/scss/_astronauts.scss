@@ -8,6 +8,9 @@
 
 .table {
     width: 50%;
+    &__container {
+        width: 80%;
+    }
     &__headers {
         @include row-style;
         p {
@@ -21,8 +24,4 @@
             @include flex(column, center, center)
         }
     }
-}
-
-.astro-table {
-    width: 80%;
 }

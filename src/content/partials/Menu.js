@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 //routes
 import { homeRoute, astronautsRoute, issRoute } from '../../routes'
@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button'
 import Drawer from '@material-ui/core/Drawer'
 import { withStyles } from '@material-ui/core/styles'
 
-//images
+//image import
 import Earth from '../../assets/earth.jpg'
 
 const Menu = props => {
@@ -27,15 +27,17 @@ const Menu = props => {
         props.updateUser(null);
     }
 
-    //sets class for the "close" btn for the menu, so that it only displays when the menu is open
+    //sets class for the menu's "close" btn, so that it only displays when the menu is open
     let drawerCloseBtnClass = open ? 'menu__close-btn' : 'display-none'
 
-    //route content from import for including in the menu (passed into List component)
+    //route content from import for passing into List component (see below Menu export)
     let routes = [homeRoute, astronautsRoute, issRoute]
 
     return (
         <div className="menu">
+
             <Button onClick={(e) => toggleDrawer(true)}><i className="fa fa-bars" style={{color: "white"}} aria-hidden="true"></i></Button>
+            
             <React.Fragment>
                 <GlobalCss />
                 <Drawer anchor={'left'} open={open} onClick={() => toggleDrawer(false)} ModalProps={{hideBackdrop: true, disablePortal: true }}>
@@ -51,11 +53,12 @@ const Menu = props => {
                     </div>
                 </Drawer>
             </React.Fragment>
+
         </div>
     )
 }
 
-//list component
+//list component inside of the right menu drawer
 const List = (props) => {
     let menuList = props.routes.map(route =><Link className="menu-header" key={route.name} to={route.route}>{route.name}</Link>)
 
@@ -67,7 +70,8 @@ const List = (props) => {
     )
 }
 
-//overrides the override property - this allows for the close menu button to appear over both drawers
+//overrides these material ui css properties
+    //this allows for the close menu button to appear over both drawers and for the full drawer background to be the same color
 const GlobalCss = withStyles({
     '@global': {
         '.MuiDrawer-paper': {

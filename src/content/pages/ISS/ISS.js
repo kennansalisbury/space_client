@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-
 import { Redirect, Link } from 'react-router-dom'
+
+//helper functions
 import { fetchData } from '../../../helpers/Helpers'
 
+//components
 import IssMap from './components/IssMap'
 
 const ISS = props => {
@@ -35,10 +37,14 @@ const ISS = props => {
 
             <IssMap issPosition={issData.iss_position} />
 
-            {/* stretch: include as of time and refresh button*/}
             <p className="body-main">{errorMessage}</p>
 
             <Link to="/" className="body-main">&larr; Back</Link>
+
+            {/* stretch: 
+                - include as of time and refresh button
+                - include twitter feed for ISS
+            */}
 
         </div>
     )

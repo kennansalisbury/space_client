@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+
+//helper functions
 import { catchError } from '../../../../helpers/Helpers'
 
 const TableRow = props => {

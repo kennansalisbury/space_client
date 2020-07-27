@@ -4,6 +4,7 @@ import { useLocation, Redirect } from 'react-router-dom'
 //helper functions
 import { catchError } from '../../../helpers/Helpers'
 
+// for help reading and parsing the query string that will come back from the twitter authentication site
 const queryString = require('querystring')
 
 const Authorizing = props => {
@@ -11,6 +12,7 @@ const Authorizing = props => {
     const [errorMessage, setErrorMessage] = useState('')
     const [redirect, setRedirect] = useState(false)
 
+    //useLocation allows us to read the query string, then parse with querystring and create data object for posting
     let location = useLocation()
     let queryObject = queryString.parse(location.search)
     let data = {
@@ -20,7 +22,7 @@ const Authorizing = props => {
 
     useEffect(() => {
 
-        //post user token and verifier to backend to complete auth
+        //post user token and verifier to backend to complete auth for twitter
         fetch(process.env.REACT_APP_SERVER_URL + 'auth/twitter', {
             method: 'POST',
             body: JSON.stringify(data),

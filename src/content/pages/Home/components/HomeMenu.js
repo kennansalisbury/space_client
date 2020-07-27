@@ -5,6 +5,7 @@ const HomeMenu = props => {
 
     const [redirect, setRedirect] = useState('')
 
+    //each menu item sets redirect state to the associated page, then redirects the user there
     if(redirect){
         return <Redirect to={redirect} />
     }

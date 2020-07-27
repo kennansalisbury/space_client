@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
+
+//all app styles imported into main.scss
 import './scss/main.scss'
 
 //components

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-
 import { Redirect, Link } from 'react-router-dom'
+
+//helper functions
 import { fetchData } from '../../../helpers/Helpers'
 
 //components
-import { Table } from './components'
+import Table from './components/Table'
 
 const Astronauts = props => {
 
@@ -12,6 +13,7 @@ const Astronauts = props => {
     const [astronautData, setAstronautData] = useState({})
 
     //on render, fetch data from the api 
+        //only if a user is logged in (so that we don't fetch data unecessarily if an unauthenticated user tries to access this page)
     useEffect(() => {
         if(props.user) {
             fetchData(process.env.REACT_APP_ASTRO_URL, setAstronautData, setErrorMessage)
@@ -41,7 +43,7 @@ const Astronauts = props => {
             
             <h1 className="heading-main">{numAstronauts} astronauts currently in space</h1>
 
-            <div className="border astro-table">
+            <div className="border table__container">
                 <p className="body-main"> {errorMessage}</p>
                 <Table astronauts={astronauts} />
             </div>
