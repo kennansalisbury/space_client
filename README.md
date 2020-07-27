@@ -22,7 +22,7 @@ For server-side repository, please visit the following link: [space-flex-server]
     * ISS Location - A page with a map showing the current position of the International Space Station.
     * Logout - logs the user out and redirects them back to the login page.
 
-## Front End Routes
+## Front-End Routes
 | Column Name | Data Type | Notes | 
 | ------ | ------------ | --------------------------- |
 | route | page | purpose/notes |
