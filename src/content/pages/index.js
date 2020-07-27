@@ -1,6 +1,6 @@
 //imports
-import Login from './Login/Login'
-import Authorizing from './Login/Authorizing'
+import Login from './Auth/Login'
+import Authorizing from './Auth/Authorizing'
 import Home from './Home/Home'
 import Astronauts from './Astronauts/Astronauts'
 import ISS from './ISS/ISS'

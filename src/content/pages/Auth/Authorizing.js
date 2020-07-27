@@ -42,6 +42,9 @@ const Authorizing = props => {
 
     }, [])
 
+    if(queryObject['?denied']) {
+        return <Redirect to="/login" />
+    }
 
     if(redirect) {
         return <Redirect to="/" />
