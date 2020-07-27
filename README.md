@@ -23,9 +23,8 @@ For server-side repository, please visit the following link: [space-flex-server]
     * Logout - logs the user out and redirects them back to the login page.
 
 ## Front-End Routes
-| Column Name | Data Type | Notes | 
+| Route | Page | Purpose/Notes | 
 | ------ | ------------ | --------------------------- |
-| route | page | purpose/notes |
 | /login | login page | unauthenticated users will be directed here to sign in using their Twitter account |
 | /authorize | authorization interstitial | users will see a brief loading page here while the backend authorizes their account |
 | / | home landing page | home/profile landing page can be access by authenticated users only |
