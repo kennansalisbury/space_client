@@ -12,7 +12,7 @@ const Home = props => {
     }
 
     return (
-        <div className="profile">
+        <div className="home">
             <div>
                 <h1 className="heading-main">Welcome {props.user.name}!</h1>
                 <img className="profile__photo" src={props.user.profile_image_url} alt="profile_photo" />
