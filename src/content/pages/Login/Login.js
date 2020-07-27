@@ -14,7 +14,7 @@ const Login = props => {
     const getTwitterAuthUrl = () => {
 
         //fetch call to backend auth route
-        fetch(process.env.REACT_APP_TWITTER_AUTH)
+        fetch(process.env.REACT_APP_SERVER_URL + 'auth/twitter')
         .then(response => response.json()
             .then(data =>  {
             

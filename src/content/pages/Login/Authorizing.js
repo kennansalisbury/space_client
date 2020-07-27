@@ -18,7 +18,7 @@ const Authorizing = props => {
 
     useEffect(() => {
         console.log(data)
-        fetch('http://localhost:3000/auth/twitter', {
+        fetch(process.env.REACT_APP_SERVER_URL + 'auth/twitter', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

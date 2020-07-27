@@ -17,7 +17,7 @@ const TableRow = props => {
                 q: props.astronaut.name
             }
 
-            fetch('http://localhost:3000/twitter/user', {
+            fetch(process.env.REACT_APP_SERVER_URL + 'twitter/user', {
                 method: 'POST',
                 body: JSON.stringify(postData),
                 headers: {
