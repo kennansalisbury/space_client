@@ -1,12 +1,11 @@
-### SPACE FLEX
+# SPACE FLEX
 
 This is the client-side repository for Space Flex, where you can flex your space knowledge by learning about the astronauts in space and the current location of the International Space Station.
 
 For server-side repository, please visit the following link: [space-flex-server](https://github.com/kennansalisbury/space_server).
 
-## Tech stack and dependencies/APIs
+## Tech stack and dependencies/APIs used on the Front End
 * React.js
-* Node.js
 * Sass (scss)
 * Material-UI
 * Google Maps API
@@ -24,6 +23,7 @@ For server-side repository, please visit the following link: [space-flex-server]
     * Logout - logs the user out and redirects them back to the login page.
 
 ## Front End Routes
+| Column Name | Data Type | Notes | 
 | ------ | ------------ | --------------------------- |
 | route | page | purpose/notes |
 | /login | login page | unauthenticated users will be directed here to sign in using their Twitter account |
@@ -33,20 +33,20 @@ For server-side repository, please visit the following link: [space-flex-server]
 | /iss | iss location page | retrieves ISS location data from API and displays using the Google Maps API |
 
 ## High Level App Structure Planning
-![app structure](./src/assets/app-structure.jpg)
+![app structure](./src/assets/app-structure.jpg =100x)
 
 ## Wireframe planning
-# Login
+### Login
 ![login wireframe](./src/assets/login-wf.png)
 
-# Home/Profile
+### Home/Profile
 ![home wireframe](./src/assets/home-wf.png)
 
-# View Astronauts
+### View Astronauts
 ![astro wireframe](./src/assets/astro-wf.png)
 
-# View ISS Location
+### View ISS Location
 ![iss wireframe](./src/assets/iss-wf.png)
 
-# Menu
+### Menu
 ![menu wireframe](./src/assets/menu-wf.png)
