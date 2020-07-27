@@ -37,16 +37,16 @@ For server-side repository, please visit the following link: [space-flex-server]
 
 ## Wireframe planning
 ### Login
-![login wireframe](./src/assets/login-wf.png)
+<img src="./src/assets/login-wf.png" alt="login wireframe" width="400" />
 
 ### Home/Profile
-![home wireframe](./src/assets/home-wf.png)
+<img src="./src/assets/home-wf.png" alt="home wireframe" width="400" />
 
 ### View Astronauts
-![astro wireframe](./src/assets/astro-wf.png)
+<img src="./src/assets/astro-wf.png" alt="astro wireframe" width="400" />
 
 ### View ISS Location
-![iss wireframe](./src/assets/iss-wf.png)
+<img src="./src/assets/iss-wf.png" alt="iss wireframe" width="400" />
 
 ### Menu
-![menu wireframe](./src/assets/menu-wf.png)
+<img src="./src/assets/menu-wf.png" alt="menu wireframe" width="400" />
