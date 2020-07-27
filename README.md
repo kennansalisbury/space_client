@@ -33,7 +33,7 @@ For server-side repository, please visit the following link: [space-flex-server]
 | /iss | iss location page | retrieves ISS location data from API and displays using the Google Maps API |
 
 ## High Level App Structure Planning
-![app structure](./src/assets/app-structure.jpg =100x)
+<img src="./src/assets/app-structure.jpg" alt="app structure" width="100" />
 
 ## Wireframe planning
 ### Login
