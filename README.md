@@ -9,7 +9,7 @@ For server-side repository, please visit the following link: [space-flex-server]
 * Sass (scss)
 * Material-UI
 * Google Maps API
-* Open Notify API
+* Open Notify API & wheretheiss.at API
 * Font Awesome Icons
 
 ## Requirements/User Flow
