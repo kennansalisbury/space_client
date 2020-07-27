@@ -4,7 +4,10 @@ const TestApi = props => {
 
     useEffect(() => {
         fetch('https://spaceflex.netlify.app/astrosapi')
-        .then(response => console.log('🌈', response))
+        .then(response => response.json()
+            .then( data => console.log('🌈', data))
+            .catch(err => console.log(err))
+        )
         .catch(err => console.log(err))
     },[])
     
