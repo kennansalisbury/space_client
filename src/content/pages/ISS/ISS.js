@@ -30,10 +30,17 @@ const ISS = props => {
         return <Redirect to="/login" />
     }
 
-    let issPosition = {
-        latitude: issData.latitude,
-        longitude: issData.longitude
+    let issPosition
+    if(issData.iss_position) {
+        issPosition = issData.iss_position
     }
+    else {
+        issPosition = {
+            latitude: issData.latitude,
+            longitude: issData.longitude
+        }
+    }
+
 
     return (
         <div className="iss">
