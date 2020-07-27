@@ -1,14 +1,14 @@
 export const loginRoute = {
-    name: 'Login',
+    name: 'login',
     route: '/login'
 }
 
 export const authorizingRoute = {
-    name: 'Authorizing',
+    name: 'authorizing',
     route: '/authorizing'
 }
 
-export const profileRoute = {
+export const homeRoute = {
     name: 'home',
     route: '/'
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Redirect } from 'react-router-dom'
 
-const ProfileMenu = props => {
+const HomeMenu = props => {
 
     const [redirect, setRedirect] = useState('')
 
@@ -18,4 +18,4 @@ const ProfileMenu = props => {
     )
 }
 
-export default ProfileMenu
+export default HomeMenu

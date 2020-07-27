@@ -1,5 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation, Redirect } from 'react-router-dom'
+
+//helper functions
 import { catchError } from '../../../helpers/Helpers'
 
 const queryString = require('querystring')
@@ -17,7 +19,8 @@ const Authorizing = props => {
     } 
 
     useEffect(() => {
-        console.log(data)
+
+        //post user token and verifier to backend to complete auth
         fetch(process.env.REACT_APP_SERVER_URL + 'auth/twitter', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -37,8 +40,6 @@ const Authorizing = props => {
         )
         .catch(err => catchError(err, setErrorMessage))
 
-
-
     }, [])
 
 
@@ -50,6 +51,7 @@ const Authorizing = props => {
     return (
         <div className="authorizing">
             <div className="border">Please wait just a minute while we confirm your Twitter account</div>
+            <p className="body-main">{errorMessage}</p>
         </div>
     )
 }

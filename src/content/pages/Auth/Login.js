@@ -26,9 +26,7 @@ const Login = props => {
     }
 
     useEffect(() => {
-        if(!props.user) {
-            getTwitterAuthUrl()
-        }
+        getTwitterAuthUrl()
     }, [])
 
     //if a user is already logged in, redirect to profile

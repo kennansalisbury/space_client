@@ -1,11 +1,10 @@
 import React from 'react'
-
 import { Redirect } from 'react-router-dom'
 
 //components
-import ProfileMenu from './ProfileMenu'
+import HomeMenu from './components/HomeMenu'
 
-const Profile = props => {
+const Home = props => {
 
     //if no user is logged in, redirect to login
     if(!props.user) {
@@ -20,11 +19,11 @@ const Profile = props => {
                 <p className="body-main">What would you like to do first?</p>
             </div>
             
-            <ProfileMenu />
+            <HomeMenu />
 
         </div>
 
     )
 }
 
-export default Profile
+export default Home

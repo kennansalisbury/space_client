@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 
 //routes
-import { profileRoute, astronautsRoute, issRoute } from '../../config/routes'
+import { homeRoute, astronautsRoute, issRoute } from '../../routes'
 
 //material UI components
 import Button from '@material-ui/core/Button'
@@ -31,7 +31,7 @@ const Menu = props => {
     let drawerCloseBtnClass = open ? 'menu__close-btn' : 'display-none'
 
     //route content from import for including in the menu (passed into List component)
-    let routes = [profileRoute, astronautsRoute, issRoute]
+    let routes = [homeRoute, astronautsRoute, issRoute]
 
     return (
         <div className="menu">

@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import './scss/main.scss'
-import { CookiesProvider } from 'react-cookie'
 import jwtDecode from 'jwt-decode'
+import './scss/main.scss'
 
 //components
 import Content from './content/Content'
@@ -27,7 +26,7 @@ function App() {
       // update the user with token info
       decodeToken(newToken)
     }
-    else { // logging out
+    else { // for logging out
       setUser(null)
     }
   }
@@ -57,9 +56,7 @@ function App() {
 
   return (
     <Router>
-      <CookiesProvider>
         <Content user={user} updateUser={updateUser} />
-      </CookiesProvider>
     </Router>
   );
 }

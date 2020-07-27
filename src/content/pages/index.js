@@ -1,10 +1,10 @@
 //imports
 import Login from './Login/Login'
 import Authorizing from './Login/Authorizing'
-import Profile from './Profile/Profile'
+import Home from './Home/Home'
 import Astronauts from './Astronauts/Astronauts'
 import ISS from './ISS/ISS'
 
 
 //exports
-export { Login, Profile, Astronauts, ISS, Authorizing }
+export { Login, Home, Astronauts, ISS, Authorizing }
