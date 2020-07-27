@@ -33,7 +33,6 @@ const Login = props => {
 
     //if a user is already logged in, redirect to profile
     if(props.user) {
-        console.log('there is a user', props.user)
         return <Redirect to="/" />
     }
 

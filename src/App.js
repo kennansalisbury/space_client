@@ -6,7 +6,6 @@ import jwtDecode from 'jwt-decode'
 
 //components
 import Content from './content/Content'
-import { Data } from '@react-google-maps/api'
 
 function App() {
 
@@ -20,7 +19,7 @@ function App() {
 
   // Helper function to update the user
   const updateUser = newToken => {
-    console.log('update user')
+
     if(newToken) {
       // Save the token 
       localStorage.setItem('userToken', newToken) //reassigns token in local storage
