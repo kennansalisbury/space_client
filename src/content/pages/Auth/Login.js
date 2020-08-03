@@ -35,7 +35,7 @@ const Login = props => {
             
             <div className="border login__twitter">
                 <p className="body-bold">Flex your space knowledge. </p>
-                <p className="body-main">Learn about the astronauts currently in space, and see where the International Space space station is right now. </p>
+                <p className="body-main">Learn about the astronauts currently in space, and see where the International Space Station is right now. </p>
                 {/* sign in with twitter button appears once twitter url is received from backend */}
                 {twitterUrl ? <a href={twitterUrl.url} rel="noopener noreferrer"><img src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/icons/sign-in-with-twitter-gray-1-png-img-fullhd-medium.png.img.fullhd.medium.png" alt="sign in with twitter button"/></a> : ''}
                 {/* any errors will display here */}
