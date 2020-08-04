@@ -7,7 +7,6 @@ import './scss/main.scss'
 
 //components
 import Content from './content/Content'
-import TestApi from './TestApi'
 
 function App() {
 
@@ -60,7 +59,6 @@ function App() {
   return (
     <Router>
         <Content user={user} updateUser={updateUser} />
-        <TestApi />
     </Router>
   );
 }
